@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "author": "Axel Aguilar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 10.2, "left": 287.4, "attrs": {} },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": -102.9, "left": -117.8, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 12.8,
+      "left": -181.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": 138.4,
+      "left": -122.58,
+      "attrs": {}
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir2", "top": 138.4, "left": 703.02, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -259, "left": 297.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay2", "top": -259, "left": 537.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay3", "top": -259, "left": 739.2, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -295.2,
+      "left": 1.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 92.8,
+      "left": 965.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -3.4,
+      "left": 960,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -157,
+      "left": 960,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": -80.2,
+      "left": 960,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "gas1:VCC", "uno:5V", "red", [ "h192", "v277.5", "h201.6" ] ],
+    [ "gas1:GND", "uno:GND.2", "black", [ "h220.8", "v306.4", "h192" ] ],
+    [ "gas1:AOUT", "uno:A0", "gold", [ "h172.8", "v345.6", "h268.8" ] ],
+    [ "ldr1:VCC", "uno:5V", "red", [ "h144", "v278.4", "h230.4" ] ],
+    [ "ldr1:GND", "uno:GND.3", "black", [ "h124.8", "v287.6", "h259.2" ] ],
+    [ "ldr1:AO", "uno:A1", "gold", [ "h96", "v287.3", "h345.6" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v134.4", "h528" ] ],
+    [ "pir1:GND", "uno:GND.2", "black", [ "v153.6", "h527.74" ] ],
+    [ "pir1:OUT", "uno:2", "gray", [ "v76.8", "h-124.94", "v-451.2", "h652.8" ] ],
+    [ "pir2:VCC", "uno:5V", "red", [ "v57.6", "h-307.2" ] ],
+    [ "pir2:GND", "uno:GND.3", "black", [ "v76.8", "h-278.66" ] ],
+    [ "pir2:OUT", "uno:3", "gray", [ "v9.6", "h-172.94", "v-297.6", "h-76.8" ] ],
+    [ "relay1:IN", "uno:8", "gray", [ "h-38.4", "v47.8", "h201.6" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "h-48", "v652.8", "h182.4" ] ],
+    [ "relay1:GND", "uno:GND.2", "black", [ "h-115.2", "v681.2", "h307.2" ] ],
+    [ "relay2:IN", "uno:9", "gray", [ "h-48", "v153.4", "h-67.2" ] ],
+    [ "relay2:VCC", "uno:5V", "red", [ "h-67.2", "v144", "h144", "v556.8", "h-192" ] ],
+    [ "relay2:GND", "uno:GND.3", "black", [ "h-28.8", "v76.4", "h144", "v566.4", "h-172.8" ] ],
+    [ "relay3:IN", "uno:10", "gray", [ "h-38.4", "v191.8", "h-278.4" ] ],
+    [ "relay3:VCC", "uno:5V", "red", [ "h-67.2", "v672", "h-249.6" ] ],
+    [ "relay3:GND", "uno:GND.2", "black", [ "h-48", "v604.4", "h-211.2" ] ],
+    [ "bz1:2", "uno:11", "gray", [ "v96", "h374" ] ],
+    [ "bz1:1", "uno:GND.3", "black", [ "v38.4", "h-307.2", "v672", "h720" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-134.4", "v422.5", "h-374.4" ] ],
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-86.4", "v355.2", "h-470.4" ] ],
+    [ "lcd1:SDA", "uno:A4", "gold", [ "h-76.8", "v451.4", "h-345.6" ] ],
+    [ "lcd1:SCL", "uno:A5", "gold", [ "h-57.6", "v470.7", "h-355.2" ] ],
+    [ "btn2:1.l", "uno:4", "gray", [ "h0" ] ],
+    [ "btn2:2.l", "uno:GND.3", "black", [ "h-144", "v653", "h-345.6" ] ],
+    [ "btn3:1.l", "uno:5", "gray", [ "h0" ] ],
+    [ "btn3:2.l", "uno:GND.2", "black", [ "h-355.2", "v585.8", "h-124.8" ] ],
+    [ "btn1:1.l", "uno:6", "gray", [ "h-192", "v-134.4", "h-336" ] ],
+    [ "btn1:2.l", "uno:GND.3", "black", [ "h-105.6", "v547.4", "h-374.4" ] ]
+  ],
+  "dependencies": {}
+}
